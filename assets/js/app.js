@@ -13,16 +13,14 @@ let contacts = document.querySelector("#contacts");
 let contactBook = JSON.parse(localStorage.getItem('addbook')) || [];
 
 //Form fields.
-const firstName = document.querySelector("#firstName");
-const lastName = document.querySelector("#lastName");
+const name = document.querySelector("#name");
 const phoneNumber = document.querySelector("#phoneNumber");
 const email = document.querySelector("#email");
 
 //Class constructor for person object.
 class entry {
-  constructor (firstName, lastName, phoneNumber, email) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+  constructor (name, phoneNumber, email) {
+    this.name = name;
     this.phoneNumber = phoneNumber;
     this.email = email;
   };
@@ -50,36 +48,29 @@ createLi = () => {
     contacts.innerHTML = "";
     for (var i in contactBook) {
       let list = document.createElement("ul");
-      let fName = document.createElement("li");
-      let lName = document.createElement("li");
+      let name = document.createElement("li");
       let phoneNum = document.createElement("li");
       let email = document.createElement("li");
-      const editButton = document.createElement("button");
       const deleteButton = document.createElement("button");
 
-      let fNameString = contactBook[i].firstName;
-      let lNameString = contactBook[i].lastName;
+      let nameString = contactBook[i].name;
       let phoneNumString = contactBook[i].phoneNumber;
       let emailString = contactBook[i].email;
 
-      fName.textContent = fNameString;
-      lName.textContent = lNameString;
+      name.textContent = nameString;
       phoneNum.textContent = phoneNumString;
       email.textContent = emailString;
-      editButton.textContent = "Edit";
       deleteButton.textContent = "Delete";
 
-      list.appendChild(fName);
-      list.appendChild(lName);
+      list.appendChild(name);
       list.appendChild(phoneNum);
       list.appendChild(email);
       list.appendChild(deleteButton);
       contacts.appendChild(list);
 
-      list.setAttribute('data-person', contactBook[i].firstName);
+      list.setAttribute('data-person', contactBook[i].name);
 
-      fName.className = 'firstName';
-      lName.className = 'lastName';
+      name.className = 'name';
       phoneNum.className = 'phoneNum';
       email.className = 'emailAddress'
       deleteButton.className = 'deleteButton'
@@ -89,7 +80,7 @@ createLi = () => {
         const parent = deleteButton.parentNode;
         contacts.removeChild(parent);
         for (let i = 0; i < contactBook.length; i++) {
-          if (contactBook[i].firstName === parent.getAttribute('data-person')) {
+          if (contactBook[i].name === parent.getAttribute('data-person')) {
             contactBook.splice(i,1);
             localStorage.setItem('addbook', JSON.stringify(contactBook));
           };
@@ -120,7 +111,7 @@ finishButton.addEventListener("click", () => {
 
 //Click event to add new contact as object to local storage.
 addButton.addEventListener("click", () => {
-    let person = new entry(firstName.value, lastName.value, phoneNumber.value, email.value);
+    let person = new entry(name.value, phoneNumber.value, email.value);
     contactBook.push(person);
     localStorage.setItem('addbook', JSON.stringify(contactBook));
     createContactForm.reset();
