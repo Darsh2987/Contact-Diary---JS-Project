@@ -1,7 +1,7 @@
 /* Header */
 
 header {
-  background-color: #662e9b;
+  background-color: $primary-color;
   color: #fff;
   box-shadow: 2px 2px 5px #aaaaaa;
   padding: .5rem 0;
@@ -25,8 +25,8 @@ header h1 {
   height: 45px;
   border: none;
   border-radius: 3px;
-  padding-left: 1em;
-  margin-top: .07em;
+  padding-left: 1rem;
+  margin-top: .07rem;
   font-size: 1rem;
   color: #fff;
   letter-spacing: .05rem;
