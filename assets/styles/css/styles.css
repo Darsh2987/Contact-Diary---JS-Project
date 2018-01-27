@@ -52,6 +52,7 @@ header h1 {
 
 /* Form - Create Contact */
 #createContact {
+  display: none;
   width: 90%;
   padding: 20px;
   margin: 100px auto;
@@ -107,5 +108,53 @@ form img {
 
 #finish {
   margin: 0 0 0 2.5rem; }
+
+/* Contacts */
+#contacts {
+  width: 100%; }
+
+#contacts ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "details delete";
+  border-bottom: 1px solid #662e9b;
+  margin: .5rem; }
+
+#contacts .name {
+  grid-area: details;
+  grid-column-end: 3;
+  background-color: #f7f7f7;
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+  padding: 1.5rem; }
+
+#contacts .name:hover {
+  color: #662e9b; }
+
+#contacts .phoneNum, #contacts .emailAddress {
+  grid-area: details;
+  font-size: 1.2rem; }
+
+#contacts .phoneNum {
+  grid-row: 2 / 3;
+  margin: 1.5rem 0 0 1rem; }
+
+#contacts .emailAddress {
+  grid-row: 3 / 4;
+  margin: 0 0 1.5rem 1rem; }
+
+#contacts .deleteButton {
+  grid-area: delete;
+  grid-row: 4 / 5;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  text-align: right;
+  margin: 0 1rem .5rem 0;
+  font-weight: bolder; }
+
+#contacts .deleteButton:hover {
+  color: #EC1C3E; }
 
 /*# sourceMappingURL=styles.css.map */
