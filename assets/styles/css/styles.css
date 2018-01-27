@@ -1,57 +1,111 @@
-/*
-Error: File to import not found or unreadable: modules/createform.
-        on line 5 of assets/styles/scss/imports.scss
+/* Global Rules */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pridi', serif;
+  box-sizing: border-box; }
 
-1: @import 'global/global';
-2: @import 'global/variables';
-3: 
-4: @import 'modules/header';
-5: @import 'modules/createform';
+* li {
+  list-style: none; }
 
-Backtrace:
-assets/styles/scss/imports.scss:5
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/import_node.rb:45:in `import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/import_node.rb:28:in `imported_file'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/import_node.rb:37:in `css_import?'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:314:in `visit_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:161:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/engine.rb:307:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:320:in `block in watch'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: modules/createform.\A         on line 5 of assets/styles/scss/imports.scss\A \A 1: @import 'global/global';\A 2: @import 'global/variables';\A 3: \A 4: @import 'modules/header';\A 5: @import 'modules/createform';"; }
+/* Header */
+header {
+  background-color: #662e9b;
+  color: #fff;
+  box-shadow: 2px 2px 5px #aaaaaa;
+  padding: .5rem 0;
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 18rem) 1fr;
+  grid-gap: .8rem;
+  text-align: center; }
+
+header h1 {
+  font-size: 1.7rem;
+  font-weight: 200;
+  padding-left: 1rem;
+  margin-top: 0;
+  letter-spacing: .03rem; }
+
+#filter {
+  background-color: rgba(132, 87, 175, 0.9);
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 3px;
+  padding-left: 1rem;
+  margin-top: .07rem;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: .05rem; }
+
+#filter::placeholder {
+  color: #fff;
+  letter-spacing: .05rem; }
+
+#create img {
+  width: 35px;
+  border-radius: 50%;
+  margin-right: .8rem;
+  position: relative;
+  top: 5px;
+  box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0 rgba(0, 0, 0, 0.12), 0px 3px 5px -1px rgba(0, 0, 0, 0.2); }
+
+/* Form - Create Contact */
+#createContact {
+  width: 90%;
+  padding: 20px;
+  margin: 100px auto;
+  border: 5px solid #662e9b;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  z-index: 5;
+  background-color: #fff;
+  box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.8); }
+
+#createContact h2 {
+  margin-bottom: 30px;
+  border-bottom: 3px solid #662e9b; }
+
+#createContact div {
+  display: flex;
+  margin-bottom: 30px; }
+
+form img {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  top: .2rem;
+  margin-right: 1rem; }
+
+#createContact input {
+  width: 90%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #D3D3D3;
+  font-size: 1rem; }
+
+#createContact input:focus {
+  border-bottom: 1px solid #662e9b; }
+
+#createContact div:last-of-type {
+  display: flex;
+  justify-content: flex-end; }
+
+#createContact button {
+  border: none;
+  font-size: 1rem;
+  letter-spacing: .05rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  cursor: pointer; }
+
+#add:hover {
+  color: #662e9b; }
+
+#finish {
+  margin: 0 0 0 2.5rem; }
+
+/*# sourceMappingURL=styles.css.map */
