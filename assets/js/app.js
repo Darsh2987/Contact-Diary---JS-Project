@@ -51,7 +51,7 @@ createLi = () => {
       let name = document.createElement("li");
       let phoneNum = document.createElement("li");
       let email = document.createElement("li");
-      const deleteButton = document.createElement("button");
+      const deleteButton = document.createElement("li");
 
       let nameString = contactBook[i].name;
       let phoneNumString = contactBook[i].phoneNumber;
