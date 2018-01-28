@@ -119,6 +119,11 @@ form img {
 #finish {
   margin: 0 0 0 2.5rem; }
 
+/* Rule For Larger Screen */
+@media (min-width: 800px) {
+  .createContact {
+    width: 700px;
+    margin-top: 200px; } }
 /* Contacts */
 #contacts {
   width: 100%; }
@@ -167,6 +172,10 @@ form img {
 #contacts .deleteButton:hover {
   color: #EC1C3E; }
 
+#contacts p {
+  text-align: center;
+  margin-top: 200px; }
+
 /* Rules For Larger Screen */
 @media (min-width: 800px) {
   #contacts {
@@ -178,6 +187,10 @@ form img {
 
   #contacts ul {
     width: 400px;
-    border: 1px solid #662e9b; } }
+    border: 1px solid #662e9b; }
+
+  #contacts p {
+    text-align: center;
+    margin-top: 100px; } }
 
 /*# sourceMappingURL=styles.css.map */

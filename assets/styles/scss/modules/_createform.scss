@@ -79,3 +79,13 @@ form img {
 #finish {
   margin: 0 0 0 2.5rem;
 }
+
+/* Rule For Larger Screen */
+
+@media (min-width: 800px){
+
+  .createContact {
+    width: 700px;
+    margin-top: 200px;
+  }
+}
