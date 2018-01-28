@@ -68,7 +68,7 @@ header h1 {
   -webkit-transition: all .3s ease-out;
   width: 90%;
   padding: 20px;
-  margin: 100px auto; }
+  margin: 200px auto; }
 
 .createContact-is-visible {
   opacity: 1;
@@ -78,25 +78,26 @@ header h1 {
 
 .createContact h2 {
   margin-bottom: 30px;
-  border-bottom: 3px solid #662e9b; }
+  border-bottom: 3px solid #662e9b;
+  font-size: 1.8rem; }
 
 .createContact div {
   display: flex;
   margin-bottom: 30px; }
 
 form img {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   position: relative;
-  top: .2rem;
-  margin-right: 1rem; }
+  top: .3rem;
+  margin-right: .7rem; }
 
 .createContact input {
   width: 90%;
   border: none;
   outline: none;
   border-bottom: 1px solid #D3D3D3;
-  font-size: 1rem; }
+  font-size: 1.3rem; }
 
 .createContact input:focus {
   border-bottom: 1px solid #662e9b; }
@@ -107,7 +108,7 @@ form img {
 
 .createContact button {
   border: none;
-  font-size: 1rem;
+  font-size: 1.4rem;
   letter-spacing: .05rem;
   text-transform: uppercase;
   font-weight: 900;
@@ -122,8 +123,7 @@ form img {
 /* Rule For Larger Screen */
 @media (min-width: 800px) {
   .createContact {
-    width: 700px;
-    margin-top: 200px; } }
+    width: 700px; } }
 /* Contacts */
 #contacts {
   width: 100%; }

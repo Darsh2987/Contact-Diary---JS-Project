@@ -17,7 +17,7 @@
   -webkit-transition: all .3s ease-out;
   width: 90%;
   padding: 20px;
-  margin: 100px auto;
+  margin: 200px auto;
 }
 
 .createContact-is-visible {
@@ -30,6 +30,7 @@
 .createContact h2 {
   margin-bottom: 30px;
   border-bottom: 3px solid $primary-color;
+  font-size: 1.8rem;
 }
 
 .createContact div {
@@ -38,11 +39,11 @@
 }
 
 form img {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   position: relative;
-  top: .2rem;
-  margin-right: 1rem;
+  top: .3rem;
+  margin-right: .7rem;
 }
 
 .createContact input {
@@ -50,7 +51,7 @@ form img {
   border: none;
   outline: none;
   border-bottom: 1px solid #D3D3D3;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .createContact input:focus {
@@ -64,7 +65,7 @@ form img {
 
 .createContact button {
   border: none;
-  font-size: 1rem;
+  font-size: 1.4rem;
   letter-spacing: .05rem;
   text-transform: uppercase;
   font-weight: 900;
@@ -86,6 +87,5 @@ form img {
 
   .createContact {
     width: 700px;
-    margin-top: 200px;
   }
 }
