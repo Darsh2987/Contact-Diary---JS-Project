@@ -6,7 +6,7 @@ header {
   box-shadow: 2px 2px 5px #aaaaaa;
   padding: .5rem 0;
   display: grid;
-  grid-template-columns: 1fr minmax(auto, 18rem) 1fr;
+  grid-template-columns: .5fr 3fr .2fr;
   grid-gap: .8rem;
   text-align: center;
 }
