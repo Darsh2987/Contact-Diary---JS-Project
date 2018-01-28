@@ -56,6 +56,11 @@
   color: #EC1C3E
 }
 
+#contacts p {
+  text-align: center;
+  margin-top: 200px;
+}
+
 /* Rules For Larger Screen */
 
 @media (min-width: 800px) {
@@ -71,5 +76,10 @@
   #contacts ul {
     width: 400px;
     border: 1px solid $primary-color;
+  }
+
+  #contacts p {
+    text-align: center;
+    margin-top: 100px;
   }
 }
