@@ -15,7 +15,7 @@ header {
   box-shadow: 2px 2px 5px #aaaaaa;
   padding: .5rem 0;
   display: grid;
-  grid-template-columns: 1fr minmax(auto, 18rem) 1fr;
+  grid-template-columns: .5fr 3fr .2fr;
   grid-gap: .8rem;
   text-align: center; }
 
@@ -166,5 +166,18 @@ form img {
 
 #contacts .deleteButton:hover {
   color: #EC1C3E; }
+
+/* Rules For Larger Screen */
+@media (min-width: 800px) {
+  #contacts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 100px auto; }
+
+  #contacts ul {
+    width: 400px;
+    border: 1px solid #662e9b; } }
 
 /*# sourceMappingURL=styles.css.map */
