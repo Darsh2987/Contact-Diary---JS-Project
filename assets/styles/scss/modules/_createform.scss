@@ -1,27 +1,38 @@
 /* Form - Create Contact */
 
-#createContact {
-  display: none;
-  width: 90%;
-  padding: 20px;
-  margin: 100px auto;
-  border: 5px solid $primary-color;
+.createContact {
+  z-index: 5;
   position: fixed;
   top: 0;
   right: 0;
   bottom: auto;
   left: 0;
-  z-index: 5;
   background-color: #fff;
   box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, .8);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transition: all .3s ease-out;
+  -webkit-transition: all .3s ease-out;
+  width: 90%;
+  padding: 20px;
+  margin: 100px auto;
 }
 
-#createContact h2 {
+.createContact-is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+}
+
+.createContact h2 {
   margin-bottom: 30px;
   border-bottom: 3px solid $primary-color;
 }
 
-#createContact div {
+.createContact div {
   display: flex;
   margin-bottom: 30px;
 }
@@ -34,7 +45,7 @@ form img {
   margin-right: 1rem;
 }
 
-#createContact input {
+.createContact input {
   width: 90%;
   border: none;
   outline: none;
@@ -42,16 +53,16 @@ form img {
   font-size: 1rem;
 }
 
-#createContact input:focus {
+.createContact input:focus {
   border-bottom: 1px solid $primary-color;
 }
 
-#createContact div:last-of-type {
+.createContact div:last-of-type {
   display: flex;
   justify-content: flex-end;
 }
 
-#createContact button {
+.createContact button {
   border: none;
   font-size: 1rem;
   letter-spacing: .05rem;

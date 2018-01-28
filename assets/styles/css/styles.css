@@ -51,26 +51,36 @@ header h1 {
   box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0 rgba(0, 0, 0, 0.12), 0px 3px 5px -1px rgba(0, 0, 0, 0.2); }
 
 /* Form - Create Contact */
-#createContact {
-  display: none;
-  width: 90%;
-  padding: 20px;
-  margin: 100px auto;
-  border: 5px solid #662e9b;
+.createContact {
+  z-index: 5;
   position: fixed;
   top: 0;
   right: 0;
   bottom: auto;
   left: 0;
-  z-index: 5;
   background-color: #fff;
-  box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.8); }
+  box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transition: all .3s ease-out;
+  -webkit-transition: all .3s ease-out;
+  width: 90%;
+  padding: 20px;
+  margin: 100px auto; }
 
-#createContact h2 {
+.createContact-is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  -webkit-transform: scale(1); }
+
+.createContact h2 {
   margin-bottom: 30px;
   border-bottom: 3px solid #662e9b; }
 
-#createContact div {
+.createContact div {
   display: flex;
   margin-bottom: 30px; }
 
@@ -81,21 +91,21 @@ form img {
   top: .2rem;
   margin-right: 1rem; }
 
-#createContact input {
+.createContact input {
   width: 90%;
   border: none;
   outline: none;
   border-bottom: 1px solid #D3D3D3;
   font-size: 1rem; }
 
-#createContact input:focus {
+.createContact input:focus {
   border-bottom: 1px solid #662e9b; }
 
-#createContact div:last-of-type {
+.createContact div:last-of-type {
   display: flex;
   justify-content: flex-end; }
 
-#createContact button {
+.createContact button {
   border: none;
   font-size: 1rem;
   letter-spacing: .05rem;
