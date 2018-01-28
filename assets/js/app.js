@@ -28,17 +28,21 @@ class entry {
 
 //Function for Filter.
 search.addEventListener("keyup", function(e) {
-  const searchInput = e.target.value.toLowerCase();
-  const li = document.getElementsByTagName('li');
+  const input = e.target.value.toLowerCase();
+  const ul = document.getElementsByTagName('ul');
 
-  for (var i = 0; i < li.length; i++) {
-    if (li[i].textContent.toLowerCase().indexOf(searchInput) != -1) {
-      li[i].parentNode.style.display = "block";
+  for (var i = 0; i < ul.length; i++) {
+    const name = ul[i].querySelector('.name').textContent.toLowerCase();
+    const phoneNumber = ul[i].querySelector('.phoneNum').textContent;
+    const email = ul[i].querySelector('.emailAddress').textContent.toLowerCase();
+    if (name.indexOf(input) != -1 || email.indexOf(input) != -1 || phoneNumber.indexOf(input) != -1) {
+      ul[i].style.display = "";
     } else {
-      li[i].parentNode.style.display = "none";
+      ul[i].style.display = "none";
     };
   };
 });
+
 
 //Function to create list items.
 createLi = () => {
@@ -51,7 +55,7 @@ createLi = () => {
       let name = document.createElement("li");
       let phoneNum = document.createElement("li");
       let email = document.createElement("li");
-      const deleteButton = document.createElement("li");
+      const deleteButton = document.createElement("button");
 
       let nameString = contactBook[i].name;
       let phoneNumString = contactBook[i].phoneNumber;
@@ -70,6 +74,7 @@ createLi = () => {
 
       list.setAttribute('data-person', contactBook[i].name);
 
+      list.className = 'person';
       name.className = 'name';
       phoneNum.className = 'phoneNum';
       email.className = 'emailAddress'
