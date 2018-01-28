@@ -5,7 +5,7 @@ const addButton = document.querySelector("#add");
 const finishButton = document.querySelector("#finish")
 
 const contactInputs = document.querySelectorAll("#createContact p input");
-const createContactForm = document.querySelector("#createContact");
+const createContactForm = document.querySelector(".createContact");
 
 let contacts = document.querySelector("#contacts");
 
@@ -100,13 +100,14 @@ show();
 
 //Click event show contact creation form.
 createButton.addEventListener("click", () => {
-  createContactForm.style.display = "block";
+  createContactForm.classList.add("createContact-is-visible");
 });
 
 //Click event to close contact creation form.
 finishButton.addEventListener("click", () => {
   createContactForm.reset();
-  createContactForm.style.display = "none";
+  createContactForm.classList.remove("createContact-is-visible");
+
 });
 
 //Click event to add new contact as object to local storage.
