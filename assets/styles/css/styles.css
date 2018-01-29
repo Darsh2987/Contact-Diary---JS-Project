@@ -142,7 +142,8 @@ form img {
   font-size: 2rem;
   font-weight: bolder;
   text-align: center;
-  padding: 1.5rem; }
+  padding: 1.5rem;
+  text-transform: capitalize; }
 
 #contacts .name:hover {
   color: #662e9b; }
