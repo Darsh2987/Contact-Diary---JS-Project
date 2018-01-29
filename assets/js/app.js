@@ -3,23 +3,6 @@ window.addEventListener('load', () => {
   //Array holding the the Objects(Contacts).
   let contactBook = (localStorage.getItem('addbook')) ? JSON.parse(localStorage.getItem('addbook')) : localStorage.setItem('addbook', JSON.stringify([]));
 
-  //Function for Filter.
-  document.querySelector("#filter").addEventListener("keyup", function(e) {
-    const input = e.target.value.toLowerCase();
-    const ul = document.querySelectorAll('#contacts ul');
-
-    for (var i = 0; i < ul.length; i++) {
-      const filterName = ul[i].querySelector('.name').textContent.toLowerCase();
-      const filterPhoneNumber = ul[i].querySelector('.phoneNum').textContent;
-      const filterEmail = ul[i].querySelector('.emailAddress').textContent.toLowerCase();
-      if (filterName.includes(input) || filterEmail.includes(input) || filterPhoneNumber.includes(input)) {
-        ul[i].style.display = "";
-      } else {
-        ul[i].style.display = "none";
-      };
-    };
-  });
-
   //Function to show all contacts.
   show = () => {
     contactBook = JSON.parse(localStorage.getItem('addbook'));
@@ -74,6 +57,23 @@ window.addEventListener('load', () => {
   };
 
   show();
+
+  //Function for Filter.
+  document.querySelector("#filter").addEventListener("keyup", function(e) {
+    const input = e.target.value.toLowerCase();
+    const ul = document.querySelectorAll('#contacts ul');
+
+    for (var i = 0; i < ul.length; i++) {
+      const filterName = ul[i].querySelector('.name').textContent.toLowerCase();
+      const filterPhoneNumber = ul[i].querySelector('.phoneNum').textContent;
+      const filterEmail = ul[i].querySelector('.emailAddress').textContent.toLowerCase();
+      if (filterName.includes(input) || filterEmail.includes(input) || filterPhoneNumber.includes(input)) {
+        ul[i].style.display = "";
+      } else {
+        ul[i].style.display = "none";
+      };
+    };
+  });
 
   //Click event - contact creation form.
   document.querySelector("#create").addEventListener("click", () => {
