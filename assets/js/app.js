@@ -1,55 +1,34 @@
-//Buttons.
-const search = document.querySelector("#filter");
-const createButton = document.querySelector("#create");
-const addButton = document.querySelector("#add");
-const finishButton = document.querySelector("#finish")
+window.addEventListener('load', () => {
 
-const contactInputs = document.querySelectorAll("#createContact p input");
-const createContactForm = document.querySelector(".createContact");
+  //Array holding the the Objects(Contacts).
+  let contactBook = (localStorage.getItem('addbook')) ? JSON.parse(localStorage.getItem('addbook')) : localStorage.setItem('addbook', JSON.stringify([]));
 
-let contacts = document.querySelector("#contacts");
+  //Function for Filter.
+  document.querySelector("#filter").addEventListener("keyup", function(e) {
+    const input = e.target.value.toLowerCase();
+    const ul = document.querySelectorAll('#contacts ul');
 
-//Array holding the the Objects(Contacts).
-let contactBook = JSON.parse(localStorage.getItem('addbook')) || [];
-
-//Form fields.
-const name = document.querySelector("#name");
-const phoneNumber = document.querySelector("#phoneNumber");
-const email = document.querySelector("#email");
-
-//Class constructor for person object.
-class entry {
-  constructor (name, phoneNumber, email) {
-    this.name = name;
-    this.phoneNumber = phoneNumber;
-    this.email = email;
-  };
-};
-
-//Function for Filter.
-search.addEventListener("keyup", function(e) {
-  const input = e.target.value.toLowerCase();
-  const ul = document.getElementsByTagName('ul');
-
-  for (var i = 0; i < ul.length; i++) {
-    const name = ul[i].querySelector('.name').textContent.toLowerCase();
-    const phoneNumber = ul[i].querySelector('.phoneNum').textContent;
-    const email = ul[i].querySelector('.emailAddress').textContent.toLowerCase();
-    if (name.indexOf(input) != -1 || email.indexOf(input) != -1 || phoneNumber.indexOf(input) != -1) {
-      ul[i].style.display = "";
-    } else {
-      ul[i].style.display = "none";
+    for (var i = 0; i < ul.length; i++) {
+      const filterName = ul[i].querySelector('.name').textContent.toLowerCase();
+      const filterPhoneNumber = ul[i].querySelector('.phoneNum').textContent;
+      const filterEmail = ul[i].querySelector('.emailAddress').textContent.toLowerCase();
+      if (filterName.includes(input) || filterEmail.includes(input) || filterPhoneNumber.includes(input)) {
+        ul[i].style.display = "";
+      } else {
+        ul[i].style.display = "none";
+      };
     };
-  };
-});
+  });
 
+  //Function to show all contacts.
+  show = () => {
+    contactBook = JSON.parse(localStorage.getItem('addbook'));
 
-//Function to create list items.
-createLi = () => {
-  if (!contactBook[0]) {
-    contacts.innerHTML;
-  } else {
+    let contacts = document.querySelector("#contacts");
+
     contacts.innerHTML = "";
+
+    //Function to create list items.
     for (var i in contactBook) {
       let list = document.createElement("ul");
       let name = document.createElement("li");
@@ -93,33 +72,43 @@ createLi = () => {
       });
     };
   };
-};
 
-//Function to show all contacts.
-show = () => {
-  contactBook = JSON.parse(localStorage.getItem('addbook'));
-  createLi();
-};
+  show();
 
-show();
+  //Click event - contact creation form.
+  document.querySelector("#create").addEventListener("click", () => {
+    const createContactForm = document.querySelector(".createContact");
 
-//Click event show contact creation form.
-createButton.addEventListener("click", () => {
-  createContactForm.classList.add("createContact-is-visible");
-});
+    //Form fields.
+    const name = document.querySelector("#name");
+    const phoneNumber = document.querySelector("#phoneNumber");
+    const email = document.querySelector("#email");
 
-//Click event to close contact creation form.
-finishButton.addEventListener("click", () => {
-  createContactForm.reset();
-  createContactForm.classList.remove("createContact-is-visible");
+    //Class constructor for person object.
+    class entry {
+      constructor (name, phoneNumber, email) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+      };
+    };
 
-});
+    createContactForm.classList.add("createContact-is-visible");
 
-//Click event to add new contact as object to local storage.
-addButton.addEventListener("click", () => {
-    let person = new entry(name.value, phoneNumber.value, email.value);
-    contactBook.push(person);
-    localStorage.setItem('addbook', JSON.stringify(contactBook));
-    createContactForm.reset();
-    show();
+    //Click event to add new contact as object to local storage.
+    document.querySelector("#add").addEventListener("click", () => {
+
+      let person = new entry(name.value, phoneNumber.value, email.value);
+      contactBook.push(person);
+      localStorage.setItem('addbook', JSON.stringify(contactBook));
+      createContactForm.reset();
+      show();
+    });
+
+    //Click event to close contact creation form.
+    document.querySelector("#finish").addEventListener("click", () => {
+      createContactForm.reset();
+      createContactForm.classList.remove("createContact-is-visible");
+    });
+  });
 });
