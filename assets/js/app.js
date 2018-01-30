@@ -90,32 +90,33 @@ window.addEventListener('load', () => {
     };
   });
 
-  //Click event - contact creation form.
+  //Click event - Open contact creation form.
   document.querySelector("#create").addEventListener("click", () => {
     const createContactForm = document.querySelector(".createContact");
+    const contactCards = document.querySelector("#contacts");
 
     //Form fields.
     const name = document.querySelector("#name");
     const phoneNumber = document.querySelector("#phoneNumber");
     const email = document.querySelector("#email");
 
-    //Class constructor for person object.
-    class entry {
-      constructor (name, phoneNumber, email) {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-      };
-    };
-
-    createContactForm.classList.add("createContact-is-visible");
-
     //Click event to add new contact as object to local storage.
     document.querySelector("#add").addEventListener("click", () => {
+
+      //Class constructor for person object.
+      class entry {
+        constructor (name, phoneNumber, email) {
+          this.name = name;
+          this.phoneNumber = phoneNumber;
+          this.email = email;
+        };
+      };
+
       let person = new entry(name.value, phoneNumber.value, email.value);
       contactBook.push(person);
       localStorage.setItem('addbook', JSON.stringify(contactBook));
       createContactForm.reset();
+      name.focus();
       show();
     });
 
@@ -123,6 +124,11 @@ window.addEventListener('load', () => {
     document.querySelector("#finish").addEventListener("click", () => {
       createContactForm.reset();
       createContactForm.classList.remove("createContact-is-visible");
+      contactCards.style.opacity = 1;
     });
+
+    name.focus();
+    contactCards.style.opacity = .2;
+    createContactForm.classList.add("createContact-is-visible");
   });
 });
