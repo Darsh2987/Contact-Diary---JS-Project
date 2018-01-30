@@ -1,11 +1,26 @@
+
 window.addEventListener('load', () => {
 
   //Array holding the the Objects(Contacts).
-  let contactBook = (localStorage.getItem('addbook')) ? JSON.parse(localStorage.getItem('addbook')) : localStorage.setItem('addbook', JSON.stringify([]));
+  let contactBook = [];
 
   //Function to show all contacts.
   show = () => {
-    contactBook = JSON.parse(localStorage.getItem('addbook'));
+    contactBook = (localStorage.getItem('addbook')) ? JSON.parse(localStorage.getItem('addbook')) : localStorage.setItem('addbook', JSON.stringify([]));
+
+    //Funtion to sort contacts/objects alphabetically
+    function compare(a, b) {
+      let comparison = 0;
+
+      if (a.name > b.name) {
+        comparison = 1;
+      } else if (a.name < b.name) {
+        comparison = -1
+      }
+      return comparison;
+    };
+
+    contactBook.sort(compare);
 
     let contacts = document.querySelector("#contacts");
 
@@ -97,7 +112,6 @@ window.addEventListener('load', () => {
 
     //Click event to add new contact as object to local storage.
     document.querySelector("#add").addEventListener("click", () => {
-
       let person = new entry(name.value, phoneNumber.value, email.value);
       contactBook.push(person);
       localStorage.setItem('addbook', JSON.stringify(contactBook));
